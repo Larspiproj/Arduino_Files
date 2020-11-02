@@ -18,11 +18,13 @@ void setup() {
 void onClock() {
   char output[15];
   unsigned int channel = 0;
-  Serial.println(step);
+  Serial.print(step);
+  Serial.print(" ");
   step++;
   for (n = 0; n < 11; n++) {
     bit = digitalRead(CHANNELS[n]);// ? 1 : 0;
     Serial.print(bit);
+    Serial.print(" ");
     channel = (channel << 1) + bit;
   }
   sprintf(output, "  %04x", channel);
@@ -31,4 +33,3 @@ void onClock() {
 
 void loop() {
 }
-

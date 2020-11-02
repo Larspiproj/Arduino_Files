@@ -25,6 +25,7 @@ void onClock() {
   for (int n = 0; n < 16; n++) {
     int bit = digitalRead(ADDR[n]) ? 1 : 0;  
     Serial.print(bit);
+    Serial.print(" ");
     address = (address << 1) + bit;
 
   }
@@ -35,6 +36,7 @@ void onClock() {
   for (int n = 0; n < 8; n++) {
     int bit = digitalRead(DATA[n]) ? 1 : 0;  
     Serial.print(bit);
+    Serial.print(" ");
     data = (data << 1) + bit;
   }
 
