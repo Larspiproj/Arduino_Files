@@ -18,10 +18,14 @@ void setup() {
     Serial.begin(57600);
 }
 
+int step = 1;
 void onClock() {
   char output[15];
 
   unsigned int address = 0;
+  Serial.print(step);
+  Serial.print("  ");
+  step++;
   for (int n = 0; n < 16; n++) {
     int bit = digitalRead(ADDR[n]) ? 1 : 0;  
     Serial.print(bit);
